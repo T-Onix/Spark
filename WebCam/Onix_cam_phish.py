@@ -73,7 +73,7 @@ def webcam():
     global port
 #====================================================================================================
     try:
-        port = input(Fore.MAGENTA + "\r\nwhich port want to open (default 80) : ".title() + Fore.RESET)
+        port = input(Fore.MAGENTA + f"\r\nwhich port want to open {Fore.GREEN}(Default 80){Fore.BLUE} : " + Fore.RESET)
     except KeyboardInterrupt:
         exit(f"\r\n{Fore.RED}[-]{Fore.BLUE} User Exited :)")
 

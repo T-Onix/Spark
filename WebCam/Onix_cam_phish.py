@@ -4,6 +4,7 @@ from time import sleep
 import pandas as pd
 import subprocess
 import linecache
+import keyboard
 import random
 import json
 import sys
@@ -138,7 +139,10 @@ def webcam():
     
         if folder != 0:
            print(Fore.GREEN + "\r\n\nI got the images !".title() + Fore.RESET)
-
+            
+           input("\r\npress Esc to exit")
+           keyboard.wait("Esc")
+           
            break
 
     if os.name == "nt":

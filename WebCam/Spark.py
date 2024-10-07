@@ -1,7 +1,5 @@
-from colorama import Fore , init ;init()
 from pathlib import Path
 from time import sleep
-import pandas as pd
 import subprocess
 import linecache
 import random
@@ -9,6 +7,11 @@ import json
 import sys
 import os
 
+try:
+    from colorama import Fore , init ;init()
+    import pandas as pd
+except (ImportError , ModuleNotFoundError):
+    subprocess.call("pip install colorama pandas" , shell=True)
 #====================================================================================================
 def php_server():
     with open("Server" , "w") as log:

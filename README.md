@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="../Logo/Spark.png">
+    <img src="Logo/Spark.png">
 </p>
 
 #

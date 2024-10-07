@@ -1,0 +1,173 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+#shimmerWave {
+  color: #46afc8;
+  font-size: 16px;
+  font-family: "Open-Sans", sans-serif;
+  font-weight: 600;
+  perspective: 80px;
+  transform-style: preserve-3d;
+}
+#shimmerWave span {
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
+  -webkit-animation: wave 2.4s ease infinite;
+          animation: wave 2.4s ease infinite;
+  letter-spacing: 0.01em;
+  transform-origin: 100% 50%;
+  transform-style: preserve-3d;
+}
+#shimmerWave span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+#shimmerWave span:nth-child(2) {
+  -webkit-animation-delay: 0.05s;
+          animation-delay: 0.05s;
+}
+#shimmerWave span:nth-child(3) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+#shimmerWave span:nth-child(4) {
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+#shimmerWave span:nth-child(5) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+#shimmerWave span:nth-child(6) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+#shimmerWave span:nth-child(7) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+#shimmerWave span:nth-child(8) {
+  -webkit-animation-delay: 0.35s;
+          animation-delay: 0.35s;
+}
+#shimmerWave span:nth-child(9) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+#shimmerWave span:nth-child(10) {
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+}
+#shimmerWave span:nth-child(11) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+#shimmerWave span:nth-child(12) {
+  -webkit-animation-delay: 0.55s;
+          animation-delay: 0.55s;
+}
+#shimmerWave span:nth-child(13) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+#shimmerWave span:nth-child(14) {
+  -webkit-animation-delay: 0.65s;
+          animation-delay: 0.65s;
+}
+#shimmerWave span:nth-child(15) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+#shimmerWave span:nth-child(16) {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+#shimmerWave span:nth-child(17) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+#shimmerWave span:nth-child(18) {
+  -webkit-animation-delay: 0.85s;
+          animation-delay: 0.85s;
+}
+#shimmerWave span:nth-child(19) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+#shimmerWave span:nth-child(20) {
+  -webkit-animation-delay: 0.95s;
+          animation-delay: 0.95s;
+}
+#shimmerWave span:nth-child(21) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+@-webkit-keyframes wave {
+  0% {
+    transform: translate3D(0, 0, 0) scale(1) rotateY(0);
+    color: #46afc8;
+    text-shadow: 0 0 0 rgba(70, 175, 200, 0);
+  }
+  12% {
+    transform: translate3D(2px, -2px, 2px) scale(1.16) rotateY(6deg);
+    color: white;
+  }
+  15% {
+    text-shadow: 0 0 2px #bce2eb;
+  }
+  24% {
+    transform: translate3D(0, 0, 0) scale(1) rotateY(0);
+    color: #6dc0d4;
+    opacity: 1;
+  }
+  36% {
+    transform: translate3D(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translate3D(0, 0, 0) scale(1) rotateY(0);
+    color: #46afc8;
+    text-shadow: 0 0 0 rgba(70, 175, 200, 0);
+  }
+  12% {
+    transform: translate3D(2px, -2px, 2px) scale(1.16) rotateY(6deg);
+    color: white;
+  }
+  15% {
+    text-shadow: 0 0 2px #bce2eb;
+  }
+  24% {
+    transform: translate3D(0, 0, 0) scale(1) rotateY(0);
+    color: #6dc0d4;
+    opacity: 1;
+  }
+  36% {
+    transform: translate3D(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}

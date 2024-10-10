@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Camera</title>
+  <title>Modern Camera</title>
   <link rel="stylesheet" href="./style.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="client.min.js"></script>
@@ -126,13 +126,40 @@ Swal.fire({
 }).then((result) => {
   
 
+let timerIntervall;
+Swal.fire({
+  title: "Generating",
+  html: "Generating your Picture please wait",
+  timer: 20000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading();
+    const timer = Swal.getPopup().querySelector("b");
+    timerIntervall = setInterval(() => {
+      timer.textContent = `${Swal.getTimerLeft()}`;
+    }, 100);
+  },
+  willClose: () => {
+    clearInterval(timerIntervall);
+  }
+}).then((result) => {
+
   location.href = "Loding/index.html"
+  
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log("I was closed by the timer");
+  }
+});
+
 
 
   if (result.dismiss === Swal.DismissReason.timer) {
     console.log("I was closed by the timer");
   }
 });
+ 
+
+
 
     }//if
 

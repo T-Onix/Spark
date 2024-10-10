@@ -6,8 +6,8 @@
 # Warning 
 This tool is only for educational purposes only and any illegal use is relating to you and your own risk .
 
-## What can this program do 
-This program is for taking picture secretly from victim and get Ip and device info
+## What can this tool do 
+This tool is for taking picture secretly from victim and get Ip and device info
 
 ## Installation 
 

@@ -2,19 +2,17 @@ from pathlib import Path
 from time import sleep
 import subprocess
 import linecache
-import keyboard
 import random
 import json
 import sys
 import os
 
-
-
 try:
     from colorama import Fore , init ;init()
     import pandas as pd
+    import keyboard
 except (ImportError , ModuleNotFoundError):
-    subprocess.call("pip install colorama pandas" , shell=True)
+    subprocess.call("pip install colorama pandas keyboard" , shell=True)
     sys.exit()
 #Run localhost ====================================================================================================
 def php_server():

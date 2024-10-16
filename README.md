@@ -3,7 +3,7 @@
 </p>
 
 #
-> [!CAUTION]
+> [!Warning]
 > This tool is only for educational purposes only and any illegal use is relating to you and your own risk .
 
 ## What can this tool do 

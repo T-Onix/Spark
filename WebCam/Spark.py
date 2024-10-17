@@ -37,7 +37,6 @@ else:
             exit("\nWrong package installer name or python name !")
         except KeyboardInterrupt:
             exit("\n\nUser Exited :)")
-        #TODO fix onix and try this again and fix tool.py               
 #Check php is installed ====================================================================================================
 Tool.check_php()
 #Clear Page ====================================================================================================

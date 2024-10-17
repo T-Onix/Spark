@@ -24,19 +24,18 @@ else:
         try:
             package_installer = input("\nEnter your package installer (like 'apt install' or 'pacman -S') >> ")
             python_v = input("\nYour linux using [1]python3 or [2]python for installing packages of python (Enter 1 or 2) >> ")
-            if python_v == 1:
+            if python_v == "1":
                 subprocess.call(f"{package_installer} python3-colorama python3-pandas python3-keyboard" ,  shell=True)
                 sys.exit()
                 
-            elif python_v == 2:
-                subprocess.call(f"{package_installer} python-colorama python-pandas python3-keyboard" ,  shell=True)
+            elif python_v == "2":
+                subprocess.call(f"{package_installer} python-colorama python-pandas" ,  shell=True)
+                print("\n[-] You may have excpected keyboard library that its not installed check it or try installing it manually")
                 sys.exit()
         except NameError:
-            exit(f"""{Fore.YELLOW}│
-╰┈➤{Fore.RED}[-]{Fore.BLUE} Wrong package installer                 name or python name !""")
+            exit("\nWrong package installer name or python name !")
         except KeyboardInterrupt:
-            exit(f"""\n{Fore.YELLOW}│
-╰┈➤{Fore.RED}[-]{Fore.BLUE} User Exited :)""")
+            exit("\n\nUser Exited :)")
         
 #Run localhost ====================================================================================================
 def php_server():

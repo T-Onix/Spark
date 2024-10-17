@@ -7,6 +7,7 @@ import json
 import sys
 import os
 
+
 try:
     from colorama import Fore , init ;init()
     import pandas as pd
@@ -14,6 +15,7 @@ try:
 except (ImportError , ModuleNotFoundError):
     subprocess.call("pip install colorama pandas keyboard" , shell=True)
     sys.exit()
+    #TODO write for linux and fix bugs
 #Run localhost ====================================================================================================
 def php_server():
     with open("Server" , "w") as log:

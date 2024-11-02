@@ -8,6 +8,7 @@ import Tool
 import json
 import os
 
+#====================================================================================================
 if os.name == "nt":
     try:
         from colorama import Fore , init ;init()
@@ -37,7 +38,8 @@ else:
             exit("\nWrong package installer name or python name !")
         except KeyboardInterrupt:
             exit("\n\nUser Exited :)")
-            
+#Check sudo ====================================================================================================
+Tool.uid()   
 #Run localhost ====================================================================================================
 def php_server():
     with open("Server" , "w") as log:

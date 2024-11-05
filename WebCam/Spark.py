@@ -3,27 +3,50 @@ from pathlib import Path
 from time import sleep
 import subprocess
 import linecache
+import platform
 import random
 import Tool
 import json
 import os
 
-#====================================================================================================
+#for Windows====================================================================================================
 if os.name == "nt":
     try:
         from colorama import Fore , init ;init()
         import pandas as pd
         import keyboard
+        
     except (ImportError , ModuleNotFoundError):
         subprocess.call("pip install colorama pandas keyboard" , shell=True)
         sys.exit()
+              
+#for termux ====================================================================================================
+try:
+    from colorama import Fore , init; init()
+    import pandas as pd
+    import keyboard
+    
+except (ImportError , ModuleNotFoundError):
+    
+    if platform.uname()[1] == "localhost" :
+        print("\nYou may have missing libraries , colorama keyboard and pandas !\n")
+        subprocess.call("pkg install python-pandas python-colorama python-keyboard" , shell=True)
+        sleep(1)
+        sys.exit()
+    else:
+        pass
+#for Linux ====================================================================================================
+
 else:
     try:
         from colorama import Fore , init ;init()
         import pandas as pd
         import keyboard
+        
     except (ImportError , ModuleNotFoundError):
         try:
+            print("\nYou may have missing libraries , colorama keyboard and pandas !")
+            
             package_installer = input("\nEnter your package installer (like 'apt install' or 'pacman -S') >> ")
             python_v = input("\nYour linux using [1]python3 or [2]python for installing packages of python (Enter 1 or 2) >> ")
             if python_v == "1":
@@ -82,6 +105,9 @@ def webcam():
     try:
         port = int(input(Fore.MAGENTA + f"\r\nWhich Port Want To Open {Fore.GREEN}(Default 80){Fore.BLUE} : " + Fore.RESET))
     except KeyboardInterrupt:
+        exit(f"""\n{Fore.YELLOW}│
+╰┈➤{Fore.RED}[-]{Fore.BLUE} User Exited :)""")
+    except EOFError:
         exit(f"""\n{Fore.YELLOW}│
 ╰┈➤{Fore.RED}[-]{Fore.BLUE} User Exited :)""")
     except ValueError:

